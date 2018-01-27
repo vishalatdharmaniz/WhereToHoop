@@ -15,7 +15,8 @@ $combo_box_2        = $_REQUEST['combo_box_2'];
 $court_pic_base_64  = $_REQUEST['court_pic'];
 $timing_start       = $_REQUEST['timing_start'];
 $timing_end         = $_REQUEST['timing_end'];
-$in_out              = $_REQUEST['in_out'];
+$in_out             = $_REQUEST['in_out'];
+$zip_code           = $_REQUEST['zip_code'];
 
 $court_pic = get_court_pic($court_pic_base_64);
 $points = 20;
@@ -42,7 +43,7 @@ if($already_courtname)
 
 //insert new court
 $insert_court = insert_court($court_id, $user_id, $court_name, $court_location, $court_longitude,
-                             $court_latitude, $combo_box_1, $combo_box_2, $court_pic, $timing_start, $timing_end, $in_out);
+                             $court_latitude, $combo_box_1, $combo_box_2, $court_pic, $timing_start, $timing_end, $in_out, $zip_code);
 if($insert_court)
 {
         $new_court = get_court_by_court_name($court_name);

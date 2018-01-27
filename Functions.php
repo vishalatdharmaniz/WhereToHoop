@@ -102,14 +102,14 @@ function get_court_by_court_id($court_id)
 *function for inserting court in table 
 */
 function insert_court($court_id, $user_id, $court_name, $court_location, $court_longitude,
-                      $court_latitude, $combo_box_1, $combo_box_2, $court_pic, $timing_start, $timing_end, $in_out)
+                      $court_latitude, $combo_box_1, $combo_box_2, $court_pic, $timing_start, $timing_end, $in_out, $zip_code)
 {
         global $conn;
         $q['query'] = "INSERT INTO `courts` 
                        (`court_id`, `user_id`, `court_name`, `court_location`, `court_longitude`,
-                        `court_latitude`, `combo_box_1`, `combo_box_2`, `court_pic`, `timing_start`, `timing_end`, in_out) 
+                        `court_latitude`, `combo_box_1`, `combo_box_2`, `court_pic`, `timing_start`, `timing_end`, in_out, zip_code) 
                          VALUES ( '$court_id', '$user_id', '$court_name', '$court_location', '$court_longitude',
-                         '$court_latitude', '$combo_box_1', '$combo_box_2', '$court_pic', '$timing_start', '$timing_end', '$in_out')";
+                         '$court_latitude', '$combo_box_1', '$combo_box_2', '$court_pic', '$timing_start', '$timing_end', '$in_out', '$zip_code')";
 
         $q['run'] = $conn->query($q['query']);
 

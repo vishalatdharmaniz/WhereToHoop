@@ -15,6 +15,7 @@ $court_pic_base_64  = $_REQUEST['court_pic'];
 $timing_start      	= $_REQUEST['timing_start'];
 $timing_end      	= $_REQUEST['timing_end'];
 $in_out				= $_REQUEST['in_out'];
+$zip_code				= $_REQUEST['zip_code'];
 
 $court_added_by = get_user_id_by_court_id($court_id);
 if($court_added_by != $user_id)
@@ -51,7 +52,7 @@ if($already_court && $already_court['court_name'] != $court_name)
 $update['query'] = "UPDATE `courts` SET `court_name` = '$court_name',`court_latitude` = '$court_latitude',
 					`court_latitude` = '$court_latitude',`court_longitude` = '$court_longitude',
 					`court_pic` = '$court_pic',`timing_start` = '$timing_start', `timing_end` = '$timing_end', `combo_box_1` = '$combo_box_1',
-					`combo_box_2` = '$combo_box_2', `court_location` = '$court_location', in_out = '$in_out'
+					`combo_box_2` = '$combo_box_2', `court_location` = '$court_location', in_out = '$in_out', zip_code = '$zip_code'
 					WHERE court_id = '$court_id'";
 $update['run'] = $conn->query($update['query']);
 
